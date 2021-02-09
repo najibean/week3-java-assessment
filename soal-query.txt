@@ -1,0 +1,7 @@
+﻿select * from transaction where price = (select max(price) from transaction);
+
+select customer_name, sum(price) as jumlah from transaction group by customer_name order by jumlah desc; 
+
+select product, count(*) as penjualan from transaction group by product order by penjualan desc limit 1;
+
+select product, sum(price) as total from transaction group by product order by total desc limit 1; 
